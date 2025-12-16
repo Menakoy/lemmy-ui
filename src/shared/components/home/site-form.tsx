@@ -177,7 +177,7 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
           </label>
           <div className="col-sm-10">
             <ImageUploadForm
-              uploadTitle={I18NextService.i18n.t("upload_icon")}
+              current={this.state.siteForm.default_comment_sort_type ?? "new"}
               uploadKey="uploadSiteIcon"
               removeKey="deleteSiteIcon"
               imageSrc={this.state.icon}
@@ -575,7 +575,7 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
           </label>
           <div className="col-sm-9">
             <CommentSortSelect
-              current={this.state.siteForm.default_comment_sort_type ?? "hot"}
+              current={"new"}
               onChange={this.handleCommentSortTypeChange}
             />
           </div>

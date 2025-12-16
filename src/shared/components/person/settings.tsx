@@ -1034,7 +1034,7 @@ export class Settings extends Component<SettingsRouteProps, SettingsState> {
               <CommentSortSelect
                 current={
                   this.state.saveUserSettingsForm.default_comment_sort_type ??
-                  "hot"
+                  "new"
                 }
                 onChange={this.handleCommentSortTypeChange}
               />

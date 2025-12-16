@@ -158,11 +158,8 @@ function getQueryStringFromCommentSortType(
   siteRes: GetSiteResponse,
   myUserInfo?: MyUserInfo,
 ): undefined | string {
-  const local_user = myUserInfo?.local_user_view.local_user;
-  const local_site = siteRes.site_view.local_site;
-  const defaultSort =
-    local_user?.default_comment_sort_type ??
-    local_site.default_comment_sort_type;
+  // Hardcode instance-wide default comment sort to "new"
+  const defaultSort: CommentSortType = "new";
   if (sort === defaultSort) {
     return undefined;
   }
@@ -224,9 +221,8 @@ export function getPostQueryParams(
     },
     source,
     {
-      sort:
-        local_user?.default_comment_sort_type ??
-        local_site.default_comment_sort_type,
+      // Hardcode instance-wide default comment sort to "new"
+      sort: "new",
     },
   );
 }
